@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusGuard AI</title>
+    <script>
+      (function() {
+        try {
+          var path = window.location.pathname;
+          var isSuperAdmin = path.startsWith('/super-admin');
+          var isOrg = path.startsWith('/organization-admin');
+          var themeKey = isSuperAdmin
+            ? 'focusguard_superadmin_theme'
+            : (isOrg ? 'focusguard_org_theme' : 'focusguard_theme');
+          var theme = localStorage.getItem(themeKey);
+          if (theme === 'dark') {
+            if (isSuperAdmin) {
+              document.documentElement.dataset.superadminTheme = 'dark';
+              document.documentElement.style.backgroundColor = '#0B1120';
+            } else {
+              document.documentElement.classList.add('dark');
+              document.documentElement.style.backgroundColor = isOrg ? '#0B1120' : '#0f172a';
+            }
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

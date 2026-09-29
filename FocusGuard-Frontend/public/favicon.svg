@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="focusguard-gradient" x1="10" y1="6" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#0f172a"/>
+  <path d="M32 8 52 16v14c0 13-8.6 22.2-20 26C20.6 52.2 12 43 12 30V16l20-8Z" fill="url(#focusguard-gradient)"/>
+  <path d="M35.4 16 23.5 33.2h8.1L29 48l11.5-18h-8.1l3-14Z" fill="white"/>
+</svg>
